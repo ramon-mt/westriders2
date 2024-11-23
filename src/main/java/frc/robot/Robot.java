@@ -99,8 +99,8 @@ public class Robot extends TimedRobot {
     mChasis.avanzar(mControl.left_Y_stick_driver(), mControl.left_X_stick_driver());
     mIntake.comer(mControl.right_Trigger());
     mIntake.escupir(mControl.left_Trigger());
-    mNeumatica.prendido(mControl.boton_B());
-    mNeumatica.apagado(mControl.boton_B2());
+    mNeumatica.pitona(mControl.boton_B());
+    mNeumatica.pitona(mControl.boton_B2());
   }
 
   @Override

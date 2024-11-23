@@ -1,37 +1,40 @@
 package frc.robot.subsystems;
-import com.ctre.phoenix6.hardware.TalonFX;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.fasterxml.jackson.annotation.PropertyAccessor;
 
 
 public class IntakePelotas {
     //hardware
-    static TalonFX MotorRoller;
+    static TalonSRX MotorRoller;
 
     //lógica
     double speed;
 
     //constructor
     public IntakePelotas(){
-    MotorRoller = new TalonFX(0);
+    MotorRoller = new TalonSRX(0);
 
     speed = 0; //aquí dejalo 0, solo cambia la speed en funcioness
     }
 
     //Funciones
     public void nadota(){
-        MotorRoller.set(0);
+        MotorRoller.set(ControlMode.PercentOutput, 0);
     }
 
     public void comer(double rtinput){
     if(rtinput>0){
         speed = 1;
     }
-    MotorRoller.set(speed);
+    MotorRoller.set(ControlMode.PercentOutput, speed);
     }
 
     public void escupir(double linput){
-    if(linput>0){
+    if(linput>0){+}
+    
         speed = -1;
     }
-      MotorRoller.set(-speed);
+      MotorRoller.set(ControlMode.PercentOutput, -speed);
     }
 }

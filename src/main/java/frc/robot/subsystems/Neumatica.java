@@ -23,15 +23,14 @@ public class Neumatica {
     }
 
     //Funciones
-    public void apagado(boolean botonpicado){
-      if(botonpicado = false){
+    public void pitona (boolean botonpicado){ 
+      if(botonpicado == false){
        solenoide.set(false);
+      }
+      else{
+        solenoide.set(true);
       }
     }
 
-    public void prendido(boolean botonpicado){
-    if(botonpicado=true){
-        solenoide.set(true);
+
     }
-}
-}
