@@ -13,7 +13,7 @@ public class IntakePelotas {
 
     //constructor
     public IntakePelotas(){
-    MotorRoller = new TalonSRX(0);
+    MotorRoller = new TalonSRX(5);
 
     speed = 0; //aquí dejalo 0, solo cambia la speed en funcioness
     }
