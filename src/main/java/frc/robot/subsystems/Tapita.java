@@ -1,32 +1,39 @@
 package frc.robot.subsystems;
-
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix6.hardware.TalonFX;
 
 public class Tapita {
-    //hardware
-        static TalonSRX tapa;
     
-    //logica
+    
+        //hardware
+        static TalonFX MotorTapita;
+    
+        //lógica
         double speed;
     
-    //constructor
-    public Tapita(){
-        tapa = new TalonSRX(0);
-
-        speed = 0;
-    }
-        
-    //Funciones
-    public void tapota(boolean abierto){
-    if(abierto == true){
-        speed = 1;
+        //constructor
+        public Tapita(){
+        MotorTapita = new TalonFX(0);
+    
+        speed = 0; //aquí dejalo 0, solo cambia la speed en funcioness
         }
-    else{
-        speed = 0;
+    
+        //Funciones
+        public void nadota(){
+            MotorTapita.set(0);
+        }
+    
+        public void abrir(boolean yput){
+        if(yput=true){
+            speed = 1;
+        }
+        MotorTapita.set(speed);
+        }
+    
+        public void cerrar(boolean aput){
+        if(aput=true){
+            speed = -1;
+        }
+          MotorTapita.set(-speed);
+        }
     }
-    }
-
-       
-    }   
-
 

@@ -53,18 +53,18 @@ public class control {
         return right_TriggerValue;
     }
 
-    public boolean boton_B(){
-        boolean boton_BValue = Mecanismos.getBButtonPressed();
-        boton_BValue = true;
+    public boolean boton_Y(){
+        boolean boton_YValue = Mecanismos.getYButtonPressed();
+        boton_YValue = true;
 
-    return boton_BValue;
+    return boton_YValue;
     }
 
-    public boolean boton_B2(){
-        boolean boton_BValue2 = Mecanismos.getBButtonReleased();
-        boton_BValue2 = false;
+    public boolean boton_A(){
+        boolean boton_AValue = Mecanismos.getAButtonPressed();
+        boton_AValue = true;
         
-        return boton_BValue2;
+        return boton_AValue;
     }
     //Importas tu objeto al Robot.java
 

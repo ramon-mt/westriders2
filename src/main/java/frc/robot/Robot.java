@@ -10,7 +10,7 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.ControlBoard.control;
 import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.IntakePelotas;
-import frc.robot.subsystems.Neumatica;
+import frc.robot.subsystems.Tapita;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -27,7 +27,7 @@ public class Robot extends TimedRobot {
   Drive mChasis;
   control mControl;
   IntakePelotas mIntake;
-  Neumatica mNeumatica;
+  Tapita mTapita;
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -41,7 +41,7 @@ public class Robot extends TimedRobot {
     mChasis = new Drive(); //lo de naranja es el nombre de tus códigos
     mControl = new control();
     mIntake = new IntakePelotas();
-    mNeumatica = new Neumatica();
+    mTapita = new Tapita();
   }
 
   /**
@@ -99,8 +99,8 @@ public class Robot extends TimedRobot {
     mChasis.avanzar(mControl.left_Y_stick_driver(), mControl.left_X_stick_driver());
     mIntake.comer(mControl.right_Trigger());
     mIntake.escupir(mControl.left_Trigger());
-    mNeumatica.pitona(mControl.boton_B());
-    mNeumatica.pitona(mControl.boton_B2());
+    mTapita.abrir(mControl.boton_Y());
+    mTapita.cerrar(mControl.boton_A());
   }
 
   @Override
