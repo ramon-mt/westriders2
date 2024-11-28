@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 package frc.robot.subsystems;
 import com.ctre.phoenix6.hardware.TalonFX;
+=======
+package frc.robot.subsystems;   
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+>>>>>>> Stashed changes
 
 public class Tapita {
     
@@ -10,6 +15,7 @@ public class Tapita {
         //lógica
         double speed;
     
+<<<<<<< Updated upstream
         //constructor
         public Tapita(){
         MotorTapita = new TalonFX(0);
@@ -34,6 +40,19 @@ public class Tapita {
             speed = -1;
         }
           MotorTapita.set(-speed);
+=======
+    //constructor
+    public Tapita(){
+        tapa = new TalonSRX(6);
+
+        speed = 0;
+    }
+        
+    //Funciones
+    public void tapota(boolean abierto){
+    if(abierto == true){
+        speed = 1;
+>>>>>>> Stashed changes
         }
     }
 

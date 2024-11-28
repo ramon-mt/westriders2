@@ -23,9 +23,9 @@ public class Drive {
 
     //constructor (define valores a tus objetos)
     public Drive(){//public + el nombre de tu clase
-    MotorDerechoAtras = new TalonSRX(0);  //(el numero dentro del paréntesis depende del número que tenga el controlador (spark))
+    MotorDerechoAtras = new TalonSRX(2);  //(el numero dentro del paréntesis depende del número que tenga el controlador (spark))
     MotorDerechoAdelante = new TalonSRX(1);
-    MotorIzquierdoAtras = new TalonSRX(2);
+    MotorIzquierdoAtras = new TalonSRX(4);
     MotorIzquierdoAdelante = new TalonSRX(3);
 
     //creo que aquí dejas speed 0, solo cambia en funciones
