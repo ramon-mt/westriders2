@@ -22,18 +22,20 @@ public class IntakePelotas {
     public void nadota(){
         MotorRoller.set(ControlMode.PercentOutput,0);
     }
-
-    public void comer(double rtinput){
-    if(rtinput>0){
-        speed = 1;
-    }
-    MotorRoller.set(ControlMode.PercentOutput,speed);
+    public void activar(double leftTrigg, double rightTrigg){
+        speed = leftTrigg - rightTrigg;
+        MotorRoller.set(TalonSRXControlMode.PercentOutput, speed);
+    MotorRoller.set(ControlMode.PercentOutput, speed);
     }
 
-    public void escupir(double linput){
-    if(linput>0){
-        speed = -1;
-    }
-      MotorRoller.set(ControlMode.PercentOutput,-speed);
-    }
+
+
+
+
+
+
+    //AUTONOMO
+   public static void AutoIntake(double realintakespeedM1){
+    MotorRoller.set(ControlMode.PercentOutput, +realintakespeedM1);
+}
 }

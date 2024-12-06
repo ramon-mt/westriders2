@@ -11,6 +11,7 @@ import frc.robot.ControlBoard.control;
 import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.IntakePelotas;
 import frc.robot.subsystems.Tapita;
+import frc.robot.Auto.Actions.GetTimeAction;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -28,6 +29,7 @@ public class Robot extends TimedRobot {
   control mControl;
   IntakePelotas mIntake;
   Tapita mTapita;
+  GetTimeAction mGetTimeAction;
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -91,16 +93,15 @@ public class Robot extends TimedRobot {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
+   
   }
 
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-    mChasis.avanzar(mControl.left_Y_stick_driver(), mControl.left_X_stick_driver());
-    mIntake.comer(mControl.right_Trigger());
-    mIntake.escupir(mControl.left_Trigger());
-    mTapita.abrir(mControl.boton_Y());
-    mTapita.cerrar(mControl.boton_A());
+    mChasis.avanzar(mControl.left_Y_stick_driver(), mControl.right_X_stick_driver());
+    mIntake.activar(mControl.left_Trigger(), mControl.right_Trigger());
+    mTapita.tapitear(mControl.left2_Trigger(), mControl.right2_Trigger());
   }
 
   @Override

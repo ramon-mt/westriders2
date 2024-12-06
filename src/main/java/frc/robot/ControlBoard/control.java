@@ -21,8 +21,8 @@ public class control {
     }
 
     //Funciones
-    public double left_X_stick_driver(){
-        double xValue = Chasis.getLeftX(); //getLeftX significa que accedes al objeto, este te regresa el número o valor del eje que le pongas
+    public double right_X_stick_driver(){
+        double xValue = Chasis.getRightX(); //getLeftX significa que accedes al objeto, este te regresa el número o valor del eje que le pongas
         if(Math.abs(xValue)<tolerance){ //Math.abs() se pone para que sea con valor absoluto y tmb te acepte los negativos del stick
             xValue = 0;
         }
@@ -46,14 +46,29 @@ public class control {
     }
 
     public double right_Trigger(){
-        double right_TriggerValue = Mecanismos.getLeftTriggerAxis(); //getLeftX significa que accedes al objeto, este te regresa el número o valor del eje que le pongas
+        double right_TriggerValue = Mecanismos.getRightTriggerAxis(); //getLeftX significa que accedes al objeto, este te regresa el número o valor del eje que le pongas
         if(Math.abs(right_TriggerValue)<tolerance){ //Math.abs() se pone para que sea con valor absoluto y tmb te acepte los negativos del stick
             right_TriggerValue = 0;
         }
         return right_TriggerValue;
     }
 
-    public boolean boton_Y(){
+    public double left2_Trigger(){
+        double left_TriggerValue = Chasis.getLeftTriggerAxis(); //getLeftX significa que accedes al objeto, este te regresa el número o valor del eje que le pongas
+        if(Math.abs(left_TriggerValue)<tolerance){ //Math.abs() se pone para que sea con valor absoluto y tmb te acepte los negativos del stick
+            left_TriggerValue = 0;
+        }
+        return left_TriggerValue;
+    }
+
+    public double right2_Trigger(){
+        double right_TriggerValue = Chasis.getRightTriggerAxis(); //getLeftX significa que accedes al objeto, este te regresa el número o valor del eje que le pongas
+        if(Math.abs(right_TriggerValue)<tolerance){ //Math.abs() se pone para que sea con valor absoluto y tmb te acepte los negativos del stick
+            right_TriggerValue = 0;
+        }
+        return right_TriggerValue;
+
+    /*public boolean boton_Y(){
         boolean boton_YValue = Mecanismos.getYButtonPressed();
         boton_YValue = true;
 
@@ -65,9 +80,12 @@ public class control {
         boton_AValue = true;
         
         return boton_AValue;
-    }
+    }*/
+
+    
     //Importas tu objeto al Robot.java
 
+}
 }
 
     
