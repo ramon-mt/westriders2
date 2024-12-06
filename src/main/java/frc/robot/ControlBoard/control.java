@@ -84,7 +84,7 @@ public class control {
 
     
     //Importas tu objeto al Robot.java
-
+//ahhh
 }
 }
 
