@@ -16,7 +16,10 @@ import frc.robot.Auto.Actions.MoveForward;
 import frc.robot.Auto.Actions.MoveBackwards;
 import frc.robot.Auto.Actions.Stop;
 import frc.robot.Auto.Actions.Turnleft;
-import frc.robot.Auto.Actions.Turnright;;
+import frc.robot.Auto.Actions.Turnright;
+import frc.robot.Auto.Actions.Eat;
+import frc.robot.Auto.Actions.Throw;
+import frc.robot.Auto.Actions.Tapdown;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -34,11 +37,18 @@ public class Robot extends TimedRobot {
   control mControl;
   IntakePelotas mIntake;
   Tapita mTapita;
-
+  
 
   GetTimeAction mAutoTimer = new GetTimeAction();
   MoveForward mMoveForward = new MoveForward();
   Stop mStop = new Stop();
+  Eat mEat = new Eat();
+  MoveBackwards mMoveBackwards = new MoveBackwards();
+  Turnleft mTurnleft = new Turnleft();
+  Turnright mTurnright = new Turnright();
+  Throw mThrow = new Throw();
+  Tapdown mTapdown = new Tapdown();
+
 
 
   /**
@@ -90,15 +100,40 @@ public class Robot extends TimedRobot {
   public void autonomousPeriodic() {
     mAutoTimer.autoAbsoluteTimeControl();
     double diftime = mAutoTimer.getAbsoluteTimer()-mAutoTimer.getRelativeTimer();
-    if(diftime<1){
+
+    ///////////////////////////////Avanzar
+    /*if(diftime<1){
       mMoveForward.finalMoveForwardAction();
     }
     /*if(diftime>1 && diftime<2){
-      mTurn
-    }*/
+      mTurn*
+    }
     else{
       mStop.finalStopAction();
+    }*/
+
+
+    ////////////////////////////////CONO
+    if(diftime<3){
+      mMoveForward.finalMoveForwardAction();
     }
+    if(diftime>3 && diftime < 5){
+      mTurnright.finalTurnRightAction();
+    }
+    if(diftime>5 && diftime < 6){
+      mMoveForward.finalMoveForwardAction();
+    }
+    if(diftime>6 && diftime<7){
+      mTapdown.finalTapdownAction();
+    }
+    if(diftime>7 && diftime<9){
+      mMoveBackwards.finalMoveBackwardAction();
+    } else {
+      mStop.finalStopAction();
+    }
+
+
+
   }
 
   @Override
