@@ -1,8 +1,7 @@
 package frc.robot.subsystems;
 import com.revrobotics.CANSparkMax;
-import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
 import com.revrobotics.CANSparkLowLevel.MotorType;
+
 
 public class Tapita {
     
@@ -49,6 +48,6 @@ public class Tapita {
 
         //AUTONOMO
    public static void AutoTapita(double realtapitaspeedM1){
-    MotorTapita.set(+realtapitaspeedM1);
+    MotorTapita.set(realtapitaspeedM1);
 }
     }

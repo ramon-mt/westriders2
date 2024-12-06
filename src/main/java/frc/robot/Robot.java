@@ -19,7 +19,7 @@ import frc.robot.Auto.Actions.Turnleft;
 import frc.robot.Auto.Actions.Turnright;
 import frc.robot.Auto.Actions.Eat;
 import frc.robot.Auto.Actions.Throw;
-import frc.robot.Auto.Actions.Tapdown;
+/*import frc.robot.Auto.Actions.Tapdown;*/
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -29,8 +29,6 @@ import frc.robot.Auto.Actions.Tapdown;
  */
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
-
-  private RobotContainer m_robotContainer;
   //PARA QUE SE MUEVA TU CHASIS, CAMBIA LOS ID's
   //Para agregar otros subsistemas sigue el mismo "protocolo que con "Drive" "
   Drive mChasis;
@@ -47,7 +45,7 @@ public class Robot extends TimedRobot {
   Turnleft mTurnleft = new Turnleft();
   Turnright mTurnright = new Turnright();
   Throw mThrow = new Throw();
-  Tapdown mTapdown = new Tapdown();
+  /*Tapdown mTapdown = new Tapdown();*/
 
 
 
@@ -59,7 +57,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
-    m_robotContainer = new RobotContainer();
+   
     mChasis = new Drive(); //lo de naranja es el nombre de tus códigos
     mControl = new control();
     mIntake = new IntakePelotas();
@@ -102,19 +100,18 @@ public class Robot extends TimedRobot {
     double diftime = mAutoTimer.getAbsoluteTimer()-mAutoTimer.getRelativeTimer();
 
     ///////////////////////////////Avanzar
-    /*if(diftime<1){
+    if(diftime<2 ){
       mMoveForward.finalMoveForwardAction();
     }
     /*if(diftime>1 && diftime<2){
-      mTurn*
-    }
+      mTurn*/
     else{
       mStop.finalStopAction();
-    }*/
+    }
 
 
     ////////////////////////////////CONO
-    if(diftime<2){
+    /*if(diftime<2){
       mMoveForward.finalMoveForwardAction();
     }
     if(diftime>2 && diftime < 4){
@@ -130,7 +127,7 @@ public class Robot extends TimedRobot {
       mMoveBackwards.finalMoveBackwardAction();
     } else {
       mStop.finalStopAction();
-    }
+    }*/
 
 
 
