@@ -114,23 +114,23 @@ public class Robot extends TimedRobot {
 
 
     ////////////////////////////////CONO
-    /*if(diftime<3){
+    if(diftime<2){
       mMoveForward.finalMoveForwardAction();
     }
-    if(diftime>3 && diftime < 5){
+    if(diftime>2 && diftime < 4){
       mTurnright.finalTurnRightAction();
     }
-    if(diftime>5 && diftime < 6){
+    if(diftime>4 && diftime < 5){
       mMoveForward.finalMoveForwardAction();
     }
-    if(diftime>6 && diftime<7){
+    if(diftime>5 && diftime<5.5){
       mTapdown.finalTapdownAction();
     }
     if(diftime>7 && diftime<9){
       mMoveBackwards.finalMoveBackwardAction();
     } else {
       mStop.finalStopAction();
-    }*/
+    }
 
 
 
