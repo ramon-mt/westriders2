@@ -20,6 +20,7 @@ import frc.robot.Auto.Actions.Turnright;
 import frc.robot.Auto.Actions.Eat;
 import frc.robot.Auto.Actions.Throw;
 import frc.robot.Auto.Actions.Tapdown;
+//import frc.robot.Auto.Actions.Tapitilla;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -45,6 +46,7 @@ public class Robot extends TimedRobot {
   Turnleft mTurnleft = new Turnleft();
   Turnright mTurnright = new Turnright();
   Throw mThrow = new Throw();
+ // Tapitilla mtapitilla = new Tapitilla();
   Tapdown mTapdown;
 
 
