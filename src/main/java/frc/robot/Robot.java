@@ -19,7 +19,7 @@ import frc.robot.Auto.Actions.Turnleft;
 import frc.robot.Auto.Actions.Turnright;
 import frc.robot.Auto.Actions.Eat;
 import frc.robot.Auto.Actions.Throw;
-//import frc.robot.Auto.Actions.Tapdown;
+import frc.robot.Auto.Actions.Tapdown;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -45,7 +45,7 @@ public class Robot extends TimedRobot {
   Turnleft mTurnleft = new Turnleft();
   Turnright mTurnright = new Turnright();
   Throw mThrow = new Throw();
-  //Tapdown mTapdown = new Tapdown();
+  Tapdown mTapdown;
 
 
 
@@ -62,6 +62,7 @@ public class Robot extends TimedRobot {
     mControl = new control();
     mIntake = new IntakePelotas();
     mTapita = new Tapita();
+    mTapdown = new Tapdown(mTapita);
   }
 
   /**
@@ -111,16 +112,16 @@ public class Robot extends TimedRobot {
 
 
     //////////////////////////////CONO Y COMER
-    /*if(diftime<2){
+    if(diftime<2){
       mMoveBackwards.finalMoveBackwardAction();
     }
-    if(diftime>2 && diftime < 4){
+    if(diftime>2 && diftime < 3){
       mTapdown.finalTapdownAction();
     }
-    if(diftime>4 && diftime < 5){
+    if(diftime>4 && diftime < 4.5){
       mMoveForward.finalMoveForwardAction();
     }
-    if(diftime>5 && diftime<5.5){
+    if(diftime>5 && diftime<7){
       mEat.finalEatAction();
     }
     if(diftime>7 && diftime<9){
@@ -130,7 +131,7 @@ public class Robot extends TimedRobot {
       mMoveForward.finalMoveForwardAction();
     }else {
       mStop.finalStopAction();
-    }*/
+    }
 
     ////////////////////////////////CONO
     /*if(diftime<2){
