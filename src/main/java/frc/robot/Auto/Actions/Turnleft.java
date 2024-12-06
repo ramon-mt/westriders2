@@ -7,7 +7,7 @@ public class Turnleft {
     Drive mAutoDrive = new Drive();
     
 
-    public void finalMoveForwardAction(){
+    public void finalTurnleftAction(){
         Drive.AutoChasis(-0.3, -0.3, 0.3, 0.3);
     }
 }

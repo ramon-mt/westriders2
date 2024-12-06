@@ -7,7 +7,7 @@ public class Stop {
     Drive mAutoDrive = new Drive();
     
 
-    public void finalMoveForwardAction(){
+    public void finalStopAction(){
         Drive.AutoChasis(0, 0, 0, 0);
     }
 }

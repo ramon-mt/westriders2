@@ -12,6 +12,11 @@ import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.IntakePelotas;
 import frc.robot.subsystems.Tapita;
 import frc.robot.Auto.Actions.GetTimeAction;
+import frc.robot.Auto.Actions.MoveForward;
+import frc.robot.Auto.Actions.MoveBackwards;
+import frc.robot.Auto.Actions.Stop;
+import frc.robot.Auto.Actions.Turnleft;
+import frc.robot.Auto.Actions.Turnright;;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -29,7 +34,12 @@ public class Robot extends TimedRobot {
   control mControl;
   IntakePelotas mIntake;
   Tapita mTapita;
-  GetTimeAction mGetTimeAction;
+
+
+  GetTimeAction mAutoTimer = new GetTimeAction();
+  MoveForward mMoveForward = new MoveForward();
+  Stop mStop = new Stop();
+
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -72,17 +82,24 @@ public class Robot extends TimedRobot {
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
   @Override
   public void autonomousInit() {
-    m_autonomousCommand = m_robotContainer.getAutonomousCommand();
-
-    // schedule the autonomous command (example)
-    if (m_autonomousCommand != null) {
-      m_autonomousCommand.schedule();
-    }
+   mAutoTimer.autoRelativeTimeControl();
   }
 
   /** This function is called periodically during autonomous. */
   @Override
-  public void autonomousPeriodic() {}
+  public void autonomousPeriodic() {
+    mAutoTimer.autoAbsoluteTimeControl();
+    double diftime = mAutoTimer.getAbsoluteTimer()-mAutoTimer.getRelativeTimer();
+    if(diftime<1){
+      mMoveForward.finalMoveForwardAction();
+    }
+    /*if(diftime>1 && diftime<2){
+      mTurn
+    }*/
+    else{
+      mStop.finalStopAction();
+    }
+  }
 
   @Override
   public void teleopInit() {
