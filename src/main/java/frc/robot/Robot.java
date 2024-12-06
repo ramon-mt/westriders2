@@ -114,7 +114,7 @@ public class Robot extends TimedRobot {
 
 
     ////////////////////////////////CONO
-    if(diftime<3){
+    /*if(diftime<3){
       mMoveForward.finalMoveForwardAction();
     }
     if(diftime>3 && diftime < 5){
@@ -130,7 +130,7 @@ public class Robot extends TimedRobot {
       mMoveBackwards.finalMoveBackwardAction();
     } else {
       mStop.finalStopAction();
-    }
+    }*/
 
 
 
