@@ -103,37 +103,45 @@ public class Robot extends TimedRobot {
     double diftime = mAutoTimer.getAbsoluteTimer()-mAutoTimer.getRelativeTimer();
 
     ///////////////////////////////Avanzar
-    if(diftime<2 ){
+    /*if(diftime<2 ){
       mMoveForward.finalMoveForwardAction();
     }
-    /*if(diftime>1 && diftime<2){
-      mTurn*/
     else{
       mStop.finalStopAction();
-    }
+    } */
 
 
     //////////////////////////////CONO Y COMER
-    if(diftime<2){
+    if(diftime<3){
       mMoveBackwards.finalMoveBackwardAction();
+    } else{
+      mStop.finalStopAction();
     }
-    if(diftime>2 && diftime < 3){
+    if(diftime>3 && diftime < 4){
       mTapdown.finalTapdownAction();
+    } else{
+      mStop.finalStopAction();
     }
-    if(diftime>4 && diftime < 4.5){
-      mMoveForward.finalMoveForwardAction();
-    }
-    if(diftime>5 && diftime<7){
-      mEat.finalEatAction();
-    }
-    if(diftime>7 && diftime<9){
-      mTurnright.finalTurnRightAction();
-    } 
-    if(diftime>9 && diftime<13){
+    if(diftime>4 && diftime < 5){
       mMoveForward.finalMoveForwardAction();
     }else {
       mStop.finalStopAction();
+    }/* 
+    if(diftime>5 && diftime<9){
+      mEat.finalEatAction();
+    }else {
+      mStop.finalStopAction();
     }
+    if(diftime>8 && diftime<10){
+      mTurnright.finalTurnRightAction();
+    } else {
+      mStop.finalStopAction();
+    }
+    if(diftime>10 && diftime<12){
+      mMoveForward.finalMoveForwardAction();
+    }else {
+      mStop.finalStopAction();
+    }*/
 
     ////////////////////////////////CONO
     /*if(diftime<2){

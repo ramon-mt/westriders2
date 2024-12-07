@@ -16,7 +16,7 @@ public class Tapdown {
     }
 
     public void finalTapdownAction(){
-        mTapita.AutoTapita(-0.05);
+        mTapita.AutoTapita(0.05);
     }
     
 }
