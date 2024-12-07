@@ -7,6 +7,6 @@ public class Tapitilla {
     
 
     public void finalTapitillaAction(){
-        mAutoTapita.AutoTapita(-0.05);
+        Tapita.AutoTapita(-0.05);
 }
 }

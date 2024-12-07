@@ -102,6 +102,49 @@ public class Robot extends TimedRobot {
     mAutoTimer.autoAbsoluteTimeControl();
     double diftime = mAutoTimer.getAbsoluteTimer()-mAutoTimer.getRelativeTimer();
 
+    // Determinamos la etapa basada en el tiempo
+    int stage;
+    if (diftime < 3) {
+        stage = 1;
+    } else if (diftime >= 3 && diftime < 4) {
+        stage = 2;
+    } else if (diftime >= 4 && diftime < 5) {
+        stage = 3;
+    } else if (diftime >= 5 && diftime < 9) {
+        stage = 4;
+    } else if (diftime >= 8 && diftime < 10) {
+        stage = 5;
+    } else if (diftime >= 10 && diftime < 12) {
+        stage = 6;
+    } else {
+        stage = 0;
+    }
+
+    // Switch para manejar las acciones por etapa
+    switch (stage) {
+        case 1:
+            mMoveBackwards.finalMoveBackwardAction();
+            break;
+        case 2:
+            mTapdown.finalTapdownAction();
+            break;
+        case 3:
+            mMoveForward.finalMoveForwardAction();
+            break;
+        case 4:
+            mEat.finalEatAction();
+            break;
+        case 5:
+            mTurnright.finalTurnRightAction();
+            break;
+        case 6:
+            mMoveForward.finalMoveForwardAction();
+            break;
+        default:
+            mStop.finalStopAction();
+            break;
+    }
+
     ///////////////////////////////Avanzar
     /*if(diftime<2 ){
       mMoveForward.finalMoveForwardAction();
@@ -112,7 +155,7 @@ public class Robot extends TimedRobot {
 
 
     //////////////////////////////CONO Y COMER
-    if(diftime<3){
+    /*if(diftime<3){
       mMoveBackwards.finalMoveBackwardAction();
     } else{
       mStop.finalStopAction();
@@ -126,7 +169,7 @@ public class Robot extends TimedRobot {
       mMoveForward.finalMoveForwardAction();
     }else {
       mStop.finalStopAction();
-    }/* 
+    }
     if(diftime>5 && diftime<9){
       mEat.finalEatAction();
     }else {
