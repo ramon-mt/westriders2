@@ -6,7 +6,7 @@ public class MoveForward {
     
 
     public void finalMoveForwardAction(){
-        Drive.AutoChasis(0.30, 0.3, 0.3, 0.3);
+        Drive.AutoChasis(0.3, 0.3, 0.3, 0.3);
     }
     
     

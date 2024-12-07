@@ -102,6 +102,39 @@ public class Robot extends TimedRobot {
     mAutoTimer.autoAbsoluteTimeControl();
     double diftime = mAutoTimer.getAbsoluteTimer()-mAutoTimer.getRelativeTimer();
 
+
+    //////////////////////////////////////////////////////////////PELOTA Y ACERCAR
+
+    /*int stage;
+    if (diftime < 1) {
+        stage = 1;
+    } else if (diftime >= 0.1 && diftime < 15) {
+        stage = 2;
+    } else if (diftime >= 3 && diftime < 6) {
+        stage = 3;
+    } else {
+        stage = 0;
+    }
+
+    // Switch para manejar las acciones por etapa
+    switch (stage) {
+        case 1:
+            mMoveForward.finalMoveForwardAction();
+            break;
+        case 2:
+            mEat.finalEatAction();
+            break;
+        case 3:
+            mMoveBackwards.finalMoveBackwardAction();
+            break;
+        default:
+            mStop.finalStopAction();
+            break;
+    }*/
+
+
+
+    //////////////////////////////////////////////////////////////COMER Y CONO RC
     // Determinamos la etapa basada en el tiempo
     int stage;
     if (diftime < 3) {
