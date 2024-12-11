@@ -2,6 +2,10 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
+
+
+
+////////////////////////Hecho por Pablito - robot finalista - medio cumplió sus sueños}///////////////////////////////////////////////
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
@@ -105,13 +109,17 @@ public class Robot extends TimedRobot {
 
     //////////////////////////////////////////////////////////////PELOTA Y ACERCAR
 
-    /*int stage;
-    if (diftime < 1) {
+   /*  int stage;
+    if (diftime < 0.7) {
         stage = 1;
-    } else if (diftime >= 0.1 && diftime < 15) {
-        stage = 2;
-    } else if (diftime >= 3 && diftime < 6) {
+   // } else if (diftime >= 0.6 && diftime < 0.7) {
+   //     stage = 2;
+    } else if (diftime >= 0 && diftime < 0.7) {
         stage = 3;
+    } else if (diftime >= 0.8 && diftime < 2.6) {
+        stage = 4;
+    } else if (diftime >= 0.8 && diftime < 2.6) {
+        stage = 3;    
     } else {
         stage = 0;
     }
@@ -121,10 +129,13 @@ public class Robot extends TimedRobot {
         case 1:
             mMoveForward.finalMoveForwardAction();
             break;
-        case 2:
+        //case 2:
+           // mStop.finalStopAction();
+           // break;
+        case 3:
             mEat.finalEatAction();
             break;
-        case 3:
+        case 4:
             mMoveBackwards.finalMoveBackwardAction();
             break;
         default:
@@ -132,22 +143,42 @@ public class Robot extends TimedRobot {
             break;
     }*/
 
+    int stage;
+    if (diftime < 1.5) {
+        stage = 1;
+    } else {
+        stage = 0;
+    }
+
+    // Switch para manejar las acciones por etapa
+    switch (stage) {
+        case 1:
+            mMoveForward.finalMoveForwardAction();
+            break;
+        case 3:
+            mEat.finalEatAction();
+            break;
+        default:
+            mStop.finalStopAction();
+            break;
+    }
+
 
 
     //////////////////////////////////////////////////////////////COMER Y CONO RC
     // Determinamos la etapa basada en el tiempo
-    int stage;
-    if (diftime < 3) {
+    /*int stage;
+    if (diftime < 2.65) {
         stage = 1;
-    } else if (diftime >= 3 && diftime < 4) {
+    } else if (diftime >= 3 && diftime < 3.7) {
         stage = 2;
-    } else if (diftime >= 4 && diftime < 5) {
+    } else if (diftime.8) {
         stage = 3;
     } else if (diftime >= 5 && diftime < 9) {
         stage = 4;
-    } else if (diftime >= 8 && diftime < 10) {
+    } else if (diftime >= 8 && diftime < 12) {
         stage = 5;
-    } else if (diftime >= 10 && diftime < 12) {
+    } else if (diftime >= 12 && diftime < 15) {
         stage = 6;
     } else {
         stage = 0;
@@ -176,7 +207,7 @@ public class Robot extends TimedRobot {
         default:
             mStop.finalStopAction();
             break;
-    }
+    }*/
 
     ///////////////////////////////Avanzar
     /*if(diftime<2 ){

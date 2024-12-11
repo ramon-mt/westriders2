@@ -8,6 +8,6 @@ public class Turnright {
     
 
     public void finalTurnRightAction(){
-        Drive.AutoChasis(0.3, 0.3, -0.3, -0.3);
+        Drive.AutoChasis(-0.3, -0.3, 0.3, 0.3);
     }
 }

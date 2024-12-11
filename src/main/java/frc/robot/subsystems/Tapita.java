@@ -30,7 +30,7 @@ public class Tapita {
             speed = -0.3;
         } else{
             speed = 0;
-        }
+        }   
         MotorTapita.set(speed);*/
 
         public void tapitear(double leftTrigg, double rightTrigg){

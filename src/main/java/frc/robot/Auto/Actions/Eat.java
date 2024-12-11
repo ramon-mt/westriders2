@@ -6,6 +6,6 @@ public class Eat {
     
 
     public void finalEatAction(){
-        IntakePelotas.AutoIntake(0.3);
+        IntakePelotas.AutoIntake(0.6);
     }
 }
